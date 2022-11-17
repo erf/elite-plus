@@ -62,12 +62,10 @@ Result HTML:
 
 ```HTML
 <main id="app">
-    <div>
-        <h1>elite</h1>
-        <p style="background: #ffe088; padding: 8pt;">a tiny declarative js dom lib</p>
-        <button class="btn">Press</button>
-        <p>Made with ❤ by @apptakk</p>
-    </div>
+    <h1>elite</h1>
+    <p style="background: #ffe088; padding: 8pt;">a tiny declarative js dom lib</p>
+    <button class="btn">Press</button>
+    <p>Made with ❤ by @apptakk</p>
 </main>
 ```
 
