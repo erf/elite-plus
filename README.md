@@ -1,13 +1,12 @@
-# elite
+# elite-plus
 
-A minimal JavaScript library for building HTML elements declaratively.
+A tiny JavaScript library for building HTML elements declaratively.
 
 > in only 440 bytes
 
-A bit more descriptive than my [elite](https://github.com/erf/elite) library.
+A bit more descriptive version of my [elite](https://github.com/erf/elite) library.
 
-Given a Javascript object tree describing elements with text, attributes, events
-and children, the `el` function parses it and returns the given elements.
+Given a Javascript object describing elements with text (**tx**), attributes (**at**), events (**ev**) and children (**ch**), the `el` function builds and returns a set of HTML elements.
 
 ## Object model
 
