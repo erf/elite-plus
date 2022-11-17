@@ -6,7 +6,7 @@ A tiny JavaScript library for building HTML elements declaratively.
 
 A bit more descriptive version of my [elite](https://github.com/erf/elite) library.
 
-Given a Javascript object describing elements with text (**tx**), attributes (**at**), events (**ev**) and children (**ch**), the `el` function builds and returns a set of HTML elements.
+Given a Javascript object describing elements with text (**tx**), attributes (**at**), events (**ev**) and children (**ch**), the `elp` function builds and returns a set of HTML elements.
 
 ## Object model
 
@@ -27,7 +27,7 @@ const obj = {
 
 ## API
 
-`el(obj)`
+`elp(obj)`
 
 > Create an HTML element(s) given an object as described in [Object model](#object-model)
 
@@ -48,7 +48,7 @@ const obj = {
 ## EXAMPLE
 
 ```Javascript
-    const app = el({
+    const app = elp({
         tg: 'div', ch: [
             { tg: 'h1', tx: data.title, attr: { class: 'elite' } },
             { tg: 'p', tx: data.description, at: { style: "background: #ffe088; padding: 8pt;" } },

@@ -1,4 +1,4 @@
-function el(dom) {
+function elp(dom) {
   const element = document.createElement(dom.tg)
   if (dom.tx) {
     element.textContent = dom.tx
@@ -10,7 +10,7 @@ function el(dom) {
     Object.entries(dom.ev).forEach(([k, v]) => element.addEventListener(k, v))
   }
   if (dom.ch) {
-    element.append(...dom.ch.map(child => el(child)))
+    element.append(...dom.ch.map(child => elp(child)))
   }
   return element
 }

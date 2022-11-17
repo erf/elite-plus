@@ -34,7 +34,7 @@
         description: 'a tiny declarative js dom lib'
     }
 
-    const app = el({
+    const app = elp({
         tg: 'div', ch: [
             { tg: 'h1', tx: data.title, attr: { class: 'elite' } },
             { tg: 'p', tx: data.description, at: { style: "background: #ffe088; padding: 8pt;" } },
@@ -58,13 +58,13 @@
 
     set('app', app)
 
-    add('app', el({ tg: 'p', tx: 'Made with ❤ by @apptakk' }))
+    add('app', elp({ tg: 'p', tx: 'Made with ❤ by @apptakk', at: { style: "margin-top: 24pt; color: #9999; font-size: 13px" } }))
 
     // test performance
     /*
     let t0 = performance.now()
     for (let i = 0; i < 1000000; i++) {
-        el('p','test' + i)
+        elp('p','test' + i)
     }
     let t1 = performance.now()
     console.log('perf took ' + (t1 - t0) + ' milliseconds.')
