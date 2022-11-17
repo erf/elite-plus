@@ -6,7 +6,7 @@ A tiny JavaScript library for building HTML elements declaratively.
 
 A bit more descriptive version of my [elite](https://github.com/erf/elite) library.
 
-Given a Javascript Object or Array describing elements with text (**tx**), attributes (**at**), events (**ev**) and children (**ch**), the `elp` function builds and returns a set of HTML elements.
+Given a Javascript Object or Array describing elements with a tag (**tg**), text (**tx**), attributes (**at**), events (**ev**) and children (**ch**), the `elp` function builds and returns a set of HTML elements.
 
 ## Object model
 
