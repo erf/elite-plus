@@ -48,15 +48,12 @@ const obj = {
 ## EXAMPLE
 
 ```Javascript
-    const app = elp({
-        tg: 'div', ch: [
-            { tg: 'h1', tx: data.title, attr: { class: 'elite' } },
-            { tg: 'p', tx: data.description, at: { style: "background: #ffe088; padding: 8pt;" } },
-            { tg: 'button', tx: 'Press', at: { class: 'btn' }, ev: { click: (e) => alert('YO') } },
-            { tg: 'p', tx: 'Made with ❤ by @apptakk' },
-        ]
-    })
-
+    const app = elp([
+        { tg: 'h1', tx: data.title, attr: { class: 'elite' } },
+        { tg: 'p', tx: data.description, at: { style: "background: #ffe088; padding: 8pt;" } },
+        { tg: 'button', tx: 'Press', at: { class: 'btn' }, ev: { click: (e) => alert('YO') } },
+        { tg: 'p', tx: 'Made with ❤ by @apptakk' },
+    ])
     set('app', app)
 
 ```
