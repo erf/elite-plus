@@ -37,11 +37,11 @@ const obj = {
 
 `set(element|id, child)`
 
-> Given an **element** or **id**, replace it's children with a given **child** element
+> Given an **element** or **id**, replace it's children with a given **child(s)** element
 
 `add(elemnt|id, child)`
 
-> Given an **element** or **id** append a **child** element
+> Given an **element** or **id** append a **child(s)** element
 
 *Please read the code to understand more, it's quite simple!*
 
