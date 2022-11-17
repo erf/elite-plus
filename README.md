@@ -2,7 +2,7 @@
 
 A tiny JavaScript library for building HTML elements declaratively.
 
-This is a more verbose version of my [elite](https://github.com/erf/elite) library, which allows you to pass objects as named arguments.
+This is a version of my [elite](https://github.com/erf/elite) library which allows you to create multiple elements from a object tree with named arguments.
 
 Given a Javascript Object or Array describing elements with a tag (**tg**), text (**tx**), attributes (**at**), events (**ev**) and children (**ch**), the `elp` function builds and returns a set of HTML elements.
 
