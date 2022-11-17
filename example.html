@@ -56,28 +56,9 @@
         ]
     })
 
-    /*
-    const app = el('div', [
-        el('h1', data.title, { class: 'elite' }),
-        el('p', data.description, { style: "background: #ffe088; padding: 8pt;" }),
-        el('div', [
-            el('button', 'Press', { class: 'btn' }, { click: (e) => alert('YO') }),
-        ]),
-        el('br'),
-        el('form', {}, {
-            submit: (e) => {
-                e.preventDefault()
-                get('bottom').innerHTML = `Welcome ${get('input').value} ❤`
-            }
-        }, [
-            el('input', { id: 'input', placeholder: 'Name', required: true }),
-            el('button', 'Join', { class: 'btn', style: "margin-left: 8pt;" }),
-        ]),
-        el('p', { id: 'bottom' })
-    ])
-    */
-
     set('app', app)
+
+    add('app', el({ tg: 'p', tx: 'Made with ❤ by @apptakk' }))
 
     // test performance
     /*

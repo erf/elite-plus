@@ -1,14 +1,36 @@
 # elite
 
-A tiny JavaScript library for building HTML elements declaratively.
+A minimal JavaScript library for building HTML elements declaratively.
 
-> in only 475 bytes
+> in only 440 bytes
+
+A bit more descriptive than my [elite](https://github.com/erf/elite) library.
+
+Given a Javascript object tree describing elements with text, attributes, events
+and children, the `el` function parses it and returns the given elements.
+
+## Object model
+
+The object model is defined as folows:
+
+```Javascript
+const obj = {
+    tg: 'p', // tag
+    tx: 'Hello', // text
+    at: { class: 'awesome', style: 'background: #F00' }, // attributes
+    ev: { click: (e) => alert('YO') }, // events
+    ch: [ // children
+        { tg: 'p', tx: 'hello' },
+        { tg: 'p', tx: 'yo' },
+    ]
+}
+```
 
 ## API
 
-`el(tag, text, attributes, events, children)`
+`el(obj)`
 
-> Create an HTML element. Arguments after **tag** can be omitted or replaced with **children** . Note that elements can be nested by passing an array of child elements. `attributes` and `events` are objects.
+> Create an HTML element(s) given an object as described in [Object model](#object-model)
 
 `get(id)`
 
@@ -27,15 +49,16 @@ A tiny JavaScript library for building HTML elements declaratively.
 ## EXAMPLE
 
 ```Javascript
-const app = el('div', [
-    el('h1', 'elite', { class: 'elite' }),
-    el('p', 'a tiny declarative js dom lib', { style: "background: #ffe088; padding: 8pt;" }),
-    el('div', [
-        el('button', 'YO', {}, { click: (e) => alert('YO !') }),
-    ]),
-])
+    const app = el({
+        tg: 'div', ch: [
+            { tg: 'h1', tx: data.title, attr: { class: 'elite' } },
+            { tg: 'p', tx: data.description, at: { style: "background: #ffe088; padding: 8pt;" } },
+            { tg: 'button', tx: 'Press', at: { class: 'btn' }, ev: { click: (e) => alert('YO') } },
+            { tg: 'p', tx: 'Made with ❤ by @apptakk' },
+        ]
+    })
 
-set('app', app)
+    set('app', app)
 
 ```
 
@@ -44,11 +67,10 @@ Result HTML:
 ```HTML
 <main id="app">
     <div>
-        <h1 class="elite">elite</h1>
-        <p>a tiny declarative js dom lib</p>
-        <div>
-            <button>YO</button>
-        </div>
+        <h1>elite</h1>
+        <p style="background: #ffe088; padding: 8pt;">a tiny declarative js dom lib</p>
+        <button class="btn">Press</button>
+        <p>Made with ❤ by @apptakk</p>
     </div>
 </main>
 ```
