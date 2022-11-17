@@ -1,4 +1,7 @@
 function elp(dom) {
+  if (Array.isArray(dom)) {
+    return dom.map((o) => elp(o));
+  }
   const element = document.createElement(dom.tg)
   if (dom.tx) {
     element.textContent = dom.tx
@@ -21,7 +24,11 @@ function get(id) {
 
 function set(parent, child) {
   parent = typeof parent === 'string' ? get(parent) : parent
-  parent.replaceChildren(child);
+  if (Array.isArray(child)) {
+    parent.replaceChildren(...child);
+  } else {
+    parent.replaceChildren(child);
+  }
 }
 
 function add(parent, child) {

@@ -34,27 +34,25 @@
         description: 'a tiny declarative js dom lib'
     }
 
-    const app = elp({
-        tg: 'div', ch: [
-            { tg: 'h1', tx: data.title, attr: { class: 'elite' } },
-            { tg: 'p', tx: data.description, at: { style: "background: #ffe088; padding: 8pt;" } },
-            { tg: 'button', tx: 'Press', at: { class: 'btn' }, ev: { click: (e) => alert('YO') } },
-            { tg: 'br' }, { tg: 'br' },
-            {
-                tg: 'form', ev: {
-                    submit: (e) => {
-                        e.preventDefault()
-                        get('bottom').innerHTML = `Welcome ${get('input').value} ❤`
-                    }
-                },
-                ch: [
-                    { tg: 'input', at: { id: 'input', placeholder: 'Name', required: true } },
-                    { tg: 'button', tx: 'join', at: { class: 'btn', style: "margin-left: 8pt;" }, }
-                ]
+    const app = elp([
+        { tg: 'h1', tx: data.title, attr: { class: 'elite' } },
+        { tg: 'p', tx: data.description, at: { style: "background: #ffe088; padding: 8pt;" } },
+        { tg: 'button', tx: 'Press', at: { class: 'btn' }, ev: { click: (e) => alert('YO') } },
+        { tg: 'br' }, { tg: 'br' },
+        {
+            tg: 'form', ev: {
+                submit: (e) => {
+                    e.preventDefault()
+                    get('bottom').innerHTML = `Welcome ${get('input').value} ❤`
+                }
             },
-            { tg: 'p', at: { id: 'bottom' } }
-        ]
-    })
+            ch: [
+                { tg: 'input', at: { id: 'input', placeholder: 'Name', required: true } },
+                { tg: 'button', tx: 'join', at: { class: 'btn', style: "margin-left: 8pt;" }, }
+            ]
+        },
+        { tg: 'p', at: { id: 'bottom' } }
+    ])
 
     set('app', app)
 
