@@ -1,8 +1,8 @@
 # elite-plus
 
-A tiny JavaScript library for building HTML elements declaratively.
+A tiny JavaScript library for building HTML declaratively.
 
-This is a version of my [elite](https://github.com/erf/elite) library and allows you to create elements from an object with named arguments.
+This is a more descriptive version of [elite](https://github.com/erf/elite) which allows you to create elements using named arguments.
 
 Given a Javascript Object or Array describing elements with a tag (**tg**), text (**tx**), attributes (**at**), events (**ev**) and children (**ch**), the `elp` function builds and returns a set of HTML elements.
 
