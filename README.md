@@ -2,7 +2,7 @@
 
 A tiny JavaScript library for building HTML elements declaratively.
 
-> in only 440 bytes
+> in 527 bytes
 
 A bit more descriptive version of my [elite](https://github.com/erf/elite) library.
 
