@@ -34,38 +34,38 @@
         description: 'a tiny declarative js dom lib'
     }
 
-    const app = elp([
-        { tg: 'h1', tx: data.title, at: { class: 'elite' } },
-        { tg: 'p', tx: data.description, at: { style: "background: #ffe088; padding: 8pt;" } },
-        { tg: 'button', tx: 'Press', at: { class: 'btn' }, ev: { click: (e) => alert('YO') } },
-        { tg: 'br' }, { tg: 'br' },
+    const app = el([
+        { n: 'h1', t: data.title, a: { class: 'elite' } },
+        { n: 'p', t: data.description, a: { style: "background: #ffe088; padding: 8pt;" } },
+        { n: 'button', t: 'Press', a: { class: 'btn' }, e: { click: (e) => alert('YO') } },
+        { n: 'br' }, { n: 'br' },
         {
-            tg: 'form', ev: {
+            n: 'form', e: {
                 submit: (e) => {
                     e.preventDefault()
                     get('bottom').innerHTML = `Welcome ${get('input').value} ❤`
                 }
             },
-            ch: [
-                { tg: 'input', at: { id: 'input', placeholder: 'Name', required: true } },
-                { tg: 'button', tx: 'join', at: { class: 'btn', style: "margin-left: 8pt;" }, }
+            c: [
+                { n: 'input', a: { id: 'input', placeholder: 'Name', required: true } },
+                { n: 'button', t: 'join', a: { class: 'btn', style: "margin-left: 8pt;" }, }
             ]
         },
-        { tg: 'p', at: { id: 'bottom' } }
+        { n: 'p', a: { id: 'bottom' } }
     ])
 
     set('app', app)
 
-    add('app', elp({ tg: 'a', tx: 'github', at: { href: 'https://github.com/erf/elite-plus', target: '_blank' } }))
+    add('app', el({ n: 'a', t: 'github', a: { href: 'https://github.com/erf/elite-plus', target: '_blank' } }))
 
-    add('app', elp({ tg: 'p', tx: 'Made with ❤ by @apptakk', at: { style: "margin-top: 24pt; color: #9999; font-size: 13px" } }))
+    add('app', el({ n: 'p', t: 'Made with ❤ by @apptakk', a: { style: "margin-top: 24pt; color: #9999; font-size: 13px" } }))
 
 
     // test performance
     /*
     let t0 = performance.now()
     for (let i = 0; i < 1000000; i++) {
-        elp('p','test' + i)
+        el('p','test' + i)
     }
     let t1 = performance.now()
     console.log('perf took ' + (t1 - t0) + ' milliseconds.')

@@ -1,19 +1,19 @@
-function elp(dom) {
+function el(dom) {
   if (Array.isArray(dom)) {
-    return dom.map((o) => elp(o));
+    return dom.map((o) => el(o));
   }
-  const element = document.createElement(dom.tg)
-  if (dom.tx) {
-    element.textContent = dom.tx
+  const element = document.createElement(dom.n)
+  if (dom.t) {
+    element.textContent = dom.t
   }
-  if (dom.at) {
-    Object.entries(dom.at).forEach(([k, v]) => element.setAttribute(k, v))
+  if (dom.a) {
+    Object.entries(dom.a).forEach(([k, v]) => element.setAttribute(k, v))
   }
-  if (dom.ev) {
-    Object.entries(dom.ev).forEach(([k, v]) => element.addEventListener(k, v))
+  if (dom.e) {
+    Object.entries(dom.e).forEach(([k, v]) => element.addEventListener(k, v))
   }
-  if (dom.ch) {
-    element.append(...dom.ch.map(child => elp(child)))
+  if (dom.c) {
+    element.append(...dom.c.map(child => el(child)))
   }
   return element
 }

@@ -4,7 +4,7 @@ A tiny JavaScript library for building HTML declaratively.
 
 This is a more descriptive version of [elite](https://github.com/erf/elite) which allows you to create elements using named arguments.
 
-Given a Javascript Object or Array describing elements with a tag (**tg**), text (**tx**), attributes (**at**), events (**ev**) and children (**ch**), the `elp` function builds and returns a set of HTML elements.
+Given a Javascript Object or Array describing elements with a tag name (**n**), text (**t**), attributes (**a**), events (**e**) and children (**c**), the `el` function builds and returns a set of HTML elements.
 
 ## Object model
 
@@ -12,20 +12,20 @@ The object model is defined as folows:
 
 ```Javascript
 const obj = {
-    tg: 'p', // tag
-    tx: 'Hello', // text
-    at: { class: 'awesome', style: 'background: #F00' }, // attributes
-    ev: { click: (e) => alert('YO') }, // events
-    ch: [ // children
-        { tg: 'p', tx: 'hello' },
-        { tg: 'p', tx: 'yo' },
+    n: 'p', // tag name
+    t: 'Hello', // text
+    a: { class: 'awesome', style: 'background: #F00' }, // attributes
+    e: { click: (e) => alert('YO') }, // events
+    c: [ // children
+        { n: 'p', t: 'hello' },
+        { n: 'p', t: 'yo' },
     ]
 }
 ```
 
 ## API
 
-`elp(obj|array)`
+`el(object|array)`
 
 > Create an HTML element(s) given an object or array of objects as described in [Object model](#object-model)
 
@@ -46,11 +46,11 @@ const obj = {
 ## EXAMPLE
 
 ```Javascript
-    const app = elp([
-        { tg: 'h1', tx: data.title, attr: { class: 'elite' } },
-        { tg: 'p', tx: data.description, at: { style: "background: #ffe088; padding: 8pt;" } },
-        { tg: 'button', tx: 'Press', at: { class: 'btn' }, ev: { click: (e) => alert('YO') } },
-        { tg: 'p', tx: 'Made with ❤ by @apptakk' },
+    const app = el([
+        { n: 'h1', t: data.title, a: { class: 'elite' } },
+        { n: 'p', t: data.description, a: { style: "background: #ffe088; padding: 8pt;" } },
+        { n: 'button', tx: 'Press', a: { class: 'btn' }, e: { click: (e) => alert('YO') } },
+        { n: 'p', t: 'Made with ❤ by @apptakk' },
     ])
     set('app', app)
 
