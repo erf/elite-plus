@@ -49,7 +49,7 @@ const obj = {
     const app = el([
         { n: 'h1', t: data.title, a: { class: 'elite' } },
         { n: 'p', t: data.description, a: { style: "background: #ffe088; padding: 8pt;" } },
-        { n: 'button', tx: 'Press', a: { class: 'btn' }, e: { click: (e) => alert('YO') } },
+        { n: 'button', t: 'Press', a: { class: 'btn' }, e: { click: (e) => alert('YO') } },
         { n: 'p', t: 'Made with ❤ by @apptakk' },
     ])
     set('app', app)
